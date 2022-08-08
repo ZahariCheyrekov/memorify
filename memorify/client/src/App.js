@@ -1,10 +1,16 @@
 import './App.css';
+import { AppBar, Container, Typography } from '@mui/material';
 
 function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+    return (
+        <Container maxWidth="lg">
+            <AppBar position="static">
+                <Typography variant="h1">
+                    Memorify
+                </Typography>
+            </AppBar>
+        </Container>
+    );
 }
 
 export default App;
