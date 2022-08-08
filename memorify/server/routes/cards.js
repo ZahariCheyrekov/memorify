@@ -1,9 +1,9 @@
 import express from 'express';
 
+import { getCards } from '../controllers/cards.js';
+
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Welcome!');
-});
+router.get('/', getCards);
 
 export default router;
