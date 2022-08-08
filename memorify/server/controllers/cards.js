@@ -11,10 +11,15 @@ export const getCards = async (req, res) => {
     }
 }
 
-export const createCard = (req, res) => {
+export const createCard = async (req, res) => {
+    const card = req.body;
+    const newCard = new CardSchema(card);
+
     try {
+        await newCard.save();
+        res.status(201).json(newCard);
 
     } catch (error) {
-
+        res.status(409).json({ message: error.message });
     }
 }
