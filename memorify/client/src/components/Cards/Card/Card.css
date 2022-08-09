@@ -3,17 +3,32 @@
     height: 320px;
     border-radius: 10px;
 
+    position: relative;
     background-color: red;
     color: rgb(32, 46, 64);
 }
 
 .card__img--article {
     max-height: 200px;
+    position: relative;
 }
 
 .card__img--article img {
     border-radius: 10px 10px 0 0;
     object-fit: cover;
+}
+
+.card__img--article::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px 10px 0 0;
+    height: 173.41px;
+    background-color: black;
+    opacity: 0.5;
 }
 
 .card__info {
@@ -25,6 +40,11 @@
 }
 
 .card__author {
+    position: absolute;
+    top: 10px;
+    z-index: 100;
+
     font-size: 1.4rem;
     font-weight: normal;
+    color: #fff;
 }
