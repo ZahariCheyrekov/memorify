@@ -5,7 +5,7 @@ const cardSchema = mongoose.Schema({
     title: String,
     description: String,
     tags: [String],
-    selectedFile: String,
+    url: String,
     likeCount: {
         type: Number,
         default: 0
