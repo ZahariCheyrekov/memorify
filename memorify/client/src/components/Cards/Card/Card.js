@@ -15,16 +15,22 @@ const Card = ({ id,
             id={id}
             className="cards__card"
         >
-            <img src={url} alt="memory" />
-            <h2 className="card__author">
-                {author}
-            </h2>
-            <p className="card__content">
-                {tags}
-            </p>
-            <h2 className="card__title">
-                {title}
-            </h2>
+            <article className="card__img--article">
+                <img src={url} alt="memory" />
+            </article>
+
+            <div className="card__info">
+                <h2 className="card__title">
+                    {title}
+                </h2>
+                <h2 className="card__author">
+                    {author}
+                </h2>
+                <p className="card__content">
+                    {tags}
+                </p>
+
+            </div>
         </li>
     );
 }
