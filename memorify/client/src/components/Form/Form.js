@@ -41,7 +41,7 @@ const Form = () => {
                 <input id="tags" name="tags" className="tags" type="text" placeholder="summer, party, fun" required onChange={(ev) => setCardData({ ...cardData, tags: ev.target.value })} />
 
                 <label htmlFor="url" className="main__form--label">Url</label>
-                <input id="url" name="url" className="url" type="file" required onChange={(ev) => setCardData({ ...cardData, url: ev.target.value })} />
+                <input id="url" name="url" className="url"  required onChange={(ev) => setCardData({ ...cardData, url: ev.target.value })} />
 
                 <div className="main__form--buttons">
                     <button className="main__form--add--card" type="submit">Create</button>
