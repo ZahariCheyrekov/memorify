@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import './Cards.css';
 import Card from './Card/Card';
 import { getCards } from '../../services/cards';
 
@@ -26,7 +27,7 @@ const Cards = () => {
                         createdAt={card.createdAt}
                         description={card.description}
                         likeCount={card.likeCount}
-                        selectedFile={card.selectedFile}
+                        url={card.url}
                         tags={card.tags}
                         title={card.title}
                     />
