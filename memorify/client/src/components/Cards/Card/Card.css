@@ -1,8 +1,30 @@
 .cards__card {
     width: 260px;
-    height: 260px;
+    height: 320px;
     border-radius: 10px;
 
     background-color: red;
     color: rgb(32, 46, 64);
+}
+
+.card__img--article {
+    max-height: 200px;
+}
+
+.card__img--article img {
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.card__info {
+    padding: 10px 20px;
+}
+
+.card__title {
+    font-size: 1.6rem;
+}
+
+.card__author {
+    font-size: 1.4rem;
+    font-weight: normal;
 }
