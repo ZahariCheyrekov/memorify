@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
 
 const cardSchema = mongoose.Schema({
-    tittle: String,
-    message: String,
+    author: String,
+    title: String,
+    description: String,
     tags: [String],
     selectedFile: String,
     likeCount: {
