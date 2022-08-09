@@ -11,7 +11,7 @@ const Home = () => {
 
                 <p className="home__content">
                     A place where people can share more about their favorite memories
-                    with others and have a great time!
+                    with others and have a great time
                 </p>
 
                 <ul className="home__ul">
