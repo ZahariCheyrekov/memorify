@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import CardSchema from '../models/Card.js';
 
 export const getCards = async (req, res) => {
@@ -22,4 +23,16 @@ export const createCard = async (req, res) => {
     } catch (error) {
         res.status(409).json({ message: error.message });
     }
+}
+
+export const updateCard = async (req, res) => {
+    const { id: _id } = req.params;
+    const card = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(_id)) {
+        return res.status(404).send(`Unable to find card with id: ${_id}`);
+    }
+
+    const updatedCard = await CardSchema.findByIdAndUpdate(_id, card, { new: true });
+    res.json(updatedCard);
 }
