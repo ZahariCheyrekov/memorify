@@ -1,4 +1,12 @@
 .header {
     background-color: rgb(32, 46, 64);
     color: white;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+
+    width: 100%;
+    padding: 10px;
 }
