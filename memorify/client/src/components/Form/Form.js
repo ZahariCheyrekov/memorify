@@ -6,7 +6,7 @@ import './Form.css';
 
 const Form = () => {
     const navigate = useNavigate();
-    const [cardData, setCardData] = useState({ author: '', title: '', description: '', tags: '', selectedFile: '' });
+    const [cardData, setCardData] = useState({ author: '', title: '', description: '', tags: '', url: '' });
 
 
     const handleSubmit = async (ev) => {
@@ -40,7 +40,8 @@ const Form = () => {
                 <label htmlFor="tags" className="main__form--label">Tags</label>
                 <input id="tags" name="tags" className="tags" type="text" placeholder="summer, party, fun" required onChange={(ev) => setCardData({ ...cardData, tags: ev.target.value })} />
 
-                <input id="file" name="file" className="main__form--label" type="file" accept="Image/*" required onChange={(ev) => setCardData({ ...cardData, selectedFile: ev.target.value })} />
+                <label htmlFor="url" className="main__form--label">Url</label>
+                <input id="url" name="url" className="url" type="file" required onChange={(ev) => setCardData({ ...cardData, url: ev.target.value })} />
 
                 <div className="main__form--buttons">
                     <button className="main__form--add--card" type="submit">Create</button>
