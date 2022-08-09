@@ -1,5 +1,7 @@
 import './App.css';
 import { AppBar, Container, Typography } from '@mui/material';
+import Cards from './components/Cards/Cards';
+import Form from './components/Form/Form';
 
 function App() {
     return (
@@ -9,6 +11,8 @@ function App() {
                     Memorify
                 </Typography>
             </AppBar>
+            <Cards />
+            <Form />
         </Container>
     );
 }
