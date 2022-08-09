@@ -1,9 +1,11 @@
+import './Card.css';
+
 const Card = ({ id,
     author,
     createdAt,
     description,
     likeCount,
-    selectedFile,
+    url,
     tags,
     title
 }) => {
@@ -11,11 +13,18 @@ const Card = ({ id,
     return (
         <li
             id={id}
+            className="cards__card"
         >
-            <img src={selectedFile} alt="memory" />
-            <h2>{author}</h2>
-            <p>{tags}</p>
-            <h2>{title}</h2>
+            <img src={url} alt="memory" />
+            <h2 className="card__author">
+                {author}
+            </h2>
+            <p className="card__content">
+                {tags}
+            </p>
+            <h2 className="card__title">
+                {title}
+            </h2>
         </li>
     );
 }
