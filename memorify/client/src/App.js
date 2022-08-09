@@ -7,6 +7,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Cards from './components/Cards/Cards';
 import Form from './components/Form/Form';
+import Auth from './components/Auth/Auth';
 
 function App() {
     return (
@@ -16,8 +17,8 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/create' element={<Form />} />
                 <Route path='/memories' element={<Cards />} />
-                {/* <Route path='/login' element={<Login />} /> */}
-                {/* <Route path='/register' element={<Register />} /> */}
+                <Route path='/login' element={<Auth />} />
+                <Route path='/register' element={<Auth />} />
             </Routes>
         </>
     );
