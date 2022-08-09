@@ -8,7 +8,6 @@ const Form = () => {
     const navigate = useNavigate();
     const [cardData, setCardData] = useState({ author: '', title: '', description: '', tags: '', url: '' });
 
-
     const handleSubmit = async (ev) => {
         ev.preventDefault();
 
@@ -26,7 +25,7 @@ const Form = () => {
     return (
         <main className="main__create">
             <form className="main__form" onSubmit={handleSubmit}>
-                <legend>Create card</legend>
+                <legend className="main__form--legend">Create memory</legend>
 
                 <label htmlFor="author" className="main__form--label">Author</label>
                 <input id="author" name="author" className="author" type="text" placeholder="John" required onChange={(ev) => setCardData({ ...cardData, author: ev.target.value })} />
@@ -41,7 +40,7 @@ const Form = () => {
                 <input id="tags" name="tags" className="tags" type="text" placeholder="summer, party, fun" required onChange={(ev) => setCardData({ ...cardData, tags: ev.target.value })} />
 
                 <label htmlFor="url" className="main__form--label">Url</label>
-                <input id="url" name="url" className="url"  required onChange={(ev) => setCardData({ ...cardData, url: ev.target.value })} />
+                <input id="url" name="url" className="url" type="text" placeholder="https://images.unsplash.com/photo..." required onChange={(ev) => setCardData({ ...cardData, url: ev.target.value })} />
 
                 <div className="main__form--buttons">
                     <button className="main__form--add--card" type="submit">Create</button>
