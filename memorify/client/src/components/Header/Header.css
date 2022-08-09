@@ -5,8 +5,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
 
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+}
+
+.header__ul {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
 }
