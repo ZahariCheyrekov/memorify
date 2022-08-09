@@ -21,14 +21,15 @@
 .card__img--article::after {
     position: absolute;
     content: "";
+    height: 173.41px;
+    opacity: 0.4;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+
     border-radius: 10px 10px 0 0;
-    height: 173.41px;
     background-color: black;
-    opacity: 0.4;
 }
 
 .card__info {
