@@ -1,5 +1,6 @@
 import axios from 'axios';
 
-import { baseUrl } from '../constants/url';
+import { cardsUrl } from '../constants/urls';
 
-export const getCards = () => axios.get(baseUrl);
+export const fetchCards = () => axios.get(cardsUrl);
+export const createCard = (cardData) => axios.post(cardsUrl, cardData);
