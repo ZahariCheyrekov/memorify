@@ -1,0 +1,36 @@
+.form__auth {
+    display: flex;
+    flex-direction: column;
+
+    margin: 100px auto;
+    max-width: 400px;
+    height: 400px;
+    padding: 40px 16px;
+
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.form__auth input {
+    margin: 10px 0;
+    height: 40px;
+    padding: 10px;
+
+    outline: none;
+    width: 100%;
+}
+
+.form__label--password {
+    position: relative;
+}
+
+.form__label--password i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    font-size: 1.2rem;
+    color: rgb(143, 143, 143);
+    cursor: pointer;
+}
