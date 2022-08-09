@@ -1,0 +1,8 @@
+.cards__card {
+    width: 260px;
+    height: 260px;
+    border-radius: 10px;
+
+    background-color: red;
+    color: rgb(32, 46, 64);
+}
