@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M1374.1596758837065 408.5043301296247L1259.686245071914 342.41306403537635 1193.5949789776657 456.8864948471688 1308.0684097894582 522.9777609414172z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M55.29401712093798 463.3771624868567L171.90100909243705 579.9841544583558 288.50800106393604 463.3771624868566 171.901009092437 346.7701705153576z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1230.9536863045485 380.1781918558868L1199.3528588691254 269.9730098202687 1120.7485042689304 411.7790192913098z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1007.8457071910011-3.439680071642639L865.8258110420292-8.399124128302805 860.866366985369 133.6207720206691 1002.886263134341 138.58021607732928z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M768.222%2c625.202C798.806%2c626.735%2c829.856%2c611.5%2c843.399%2c584.036C855.864%2c558.757%2c841.823%2c530.642%2c826.524%2c506.971C812.894%2c485.882%2c793.243%2c469.834%2c768.222%2c467.72C738.656%2c465.222%2c704.771%2c469.738%2c689.933%2c495.432C675.094%2c521.128%2c689.73%2c551.693%2c705.058%2c577.1C719.71%2c601.387%2c739.893%2c623.782%2c768.222%2c625.202' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M103.86425969709987 564.9829827997326L171.72858388966893 412.5572150270647 19.302816117001086 344.69289083449564-48.561508075567986 497.11865860716347z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
     font-family: 'Open Sans', sans-serif;
     height: 100%;
 }
@@ -13,7 +14,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: white;
+    color: #fff;
 }
 
 img {
