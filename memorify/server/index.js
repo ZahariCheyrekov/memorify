@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors());
 
-app.use('/cards', cardsRoutes);
+app.use('/memories', cardsRoutes);
 
 const PORT = process.env.PORT || 5000;
 
