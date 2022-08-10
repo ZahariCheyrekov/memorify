@@ -6,9 +6,9 @@ const cardSchema = mongoose.Schema({
     description: String,
     tags: [String],
     url: String,
-    likeCount: {
-        type: Number,
-        default: 0
+    likes: {
+        type: [String],
+        default: []
     },
     createdAt: {
         type: Date,
