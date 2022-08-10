@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './Auth.css';
 
 const Auth = () => {
@@ -11,7 +13,8 @@ const Auth = () => {
 
     return (
         <form className="form__auth" onSubmit={handleSubmit}>
-            <legend>Login</legend>
+            <i className="fa-solid fa-lock"></i>
+            <legend className="form__auth--legend">Sign In</legend>
 
             <input id="email" name="email" className="email" type="text" placeholder="Email Address *" required />
 
@@ -20,7 +23,16 @@ const Auth = () => {
                 <i className="fa-solid fa-eye" onClick={() => setSowPassword(state => !state)}></i>
             </label>
 
-            <button className="form__button--submit" type="submit">Login</button>
+            <button className="form__button--signin" type="submit">SIGN IN</button>
+            <button className="form__button--signin google">
+                <i className="fa-brands fa-google"></i>
+                &nbsp;
+                GOOGLE SIGN IN
+            </button>
+
+            <p className="form__auth--question">
+                DONT'T HAVE AN ACCOUNT? SIGH UP
+            </p>
         </form>
     );
 }
