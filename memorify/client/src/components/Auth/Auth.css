@@ -43,6 +43,10 @@
     position: relative;
 }
 
+.form__label--password input {
+    padding-right: 40px;
+}
+
 .form__label--password i {
     position: absolute;
     top: 50%;
@@ -64,12 +68,8 @@
     font-size: 1rem;
     letter-spacing: 1px;
     padding: 6px;
-    margin: 10px 0 0;
+    margin: 10px 0;
     transition: all ease-in-out 0.2s;
-}
-
-.form__button--signin.google {
-    margin-bottom: 20px;
 }
 
 .form__button--signin:hover {
@@ -80,8 +80,10 @@
     position: absolute;
     right: 16px;
     bottom: 16px;
+
     font-size: 0.9rem;
     padding: 4px;
+
     border-radius: 2px;
     border: none;
     background-color: transparent;
