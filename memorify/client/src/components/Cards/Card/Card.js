@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+
 import './Card.css';
+import { deleteCard } from '../../../api/requester';
 
 const Card = ({ id,
     author,
@@ -10,6 +12,10 @@ const Card = ({ id,
     tags,
     title
 }) => {
+
+    const handleDelete = () => {
+        deleteCard(id);
+    }
 
     return (
         <Link to={`/memories/${id}`}>
@@ -34,6 +40,9 @@ const Card = ({ id,
                     <p className="card__createdAt">
                         {createdAt}
                     </p>
+                    <button className="card__button--delete" onClick={handleDelete}>
+                        Delete
+                    </button>
                 </div>
             </li>
         </Link>
