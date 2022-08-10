@@ -12,8 +12,8 @@ export const Header = () => {
                 <ul className="header__ul">
                     <Link to={'/memories'}>Memories</Link>
                     <Link to={'/create'}>Create</Link>
-                    <Link to={'/login'}>Login</Link>
-                    <Link to={'/register'}>Register</Link>
+                    <Link to={'/login'}>Sign In</Link>
+                    <Link to={'/register'}>Sign Up</Link>
                 </ul>
             </nav>
         </header>
