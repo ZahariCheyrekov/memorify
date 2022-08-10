@@ -1,17 +1,6 @@
 import mongoose from 'mongoose';
 import CardSchema from '../models/Card.js';
 
-export const getCards = async (req, res) => {
-    try {
-        const cards = await CardSchema.find();
-        console.log(cards);
-        res.status(200).json(cards);
-
-    } catch (error) {
-        res.status(404).json({ message: error.message });
-    }
-}
-
 export const getCard = async (req, res) => {
     const { id } = req.params;
 
@@ -20,7 +9,18 @@ export const getCard = async (req, res) => {
         res.status(200).json(card);
 
     } catch (error) {
-        console.log(error);
+        res.status(404).json({ message: error.message });
+    }
+}
+
+export const getCards = async (req, res) => {
+    try {
+        const cards = await CardSchema.find();
+        console.log(cards);
+        res.status(200).json(cards);
+
+    } catch (error) {
+        res.status(404).json({ message: error.message });
     }
 }
 
@@ -47,4 +47,21 @@ export const updateCard = async (req, res) => {
 
     const updatedCard = await CardSchema.findByIdAndUpdate(_id, card, { new: true });
     res.json(updatedCard);
+}
+
+export const deleteCard = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(404).send(`No card with id: ${id}`);
+        }
+
+        await CardSchema.findByIdAndRemove(id);
+
+        res.json({ message: 'Card was deleted successfully.' });
+
+    } catch (error) {
+        res.status().json({});
+    }
 }
