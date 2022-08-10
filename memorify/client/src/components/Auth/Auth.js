@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import './Auth.css';
+import { signin, signup } from '../../services/user';
 
 const Auth = () => {
     const navigate = useNavigate();
@@ -18,7 +19,14 @@ const Auth = () => {
     const handleSubmit = (ev) => {
         ev.preventDefault();
 
-        console.log(formData);
+        if (isSignIn) {
+            console.log(formData)
+            signin(formData, navigate);
+        } else {
+            console.log(formData)
+            signup(formData, navigate);
+        }
+
     }
 
     const handleChange = (ev) => {
