@@ -17,9 +17,13 @@ const Form = () => {
         navigate('/cards');
     }
 
+    const handleChange = (ev) => {
+        setCardData({ ...cardData, [ev.target.name]: ev.target.value })
+    }
+
     const clearForm = (ev) => {
         ev.preventDefault();
-        ev.target.parentNode.parentNode.reset();
+        ev.target.parentNode.reset();
     }
 
     return (
@@ -27,25 +31,18 @@ const Form = () => {
             <form className="main__form" onSubmit={handleSubmit}>
                 <legend className="main__form--legend">Create memory</legend>
 
-                <label htmlFor="author" className="main__form--label">Author</label>
-                <input id="author" name="author" className="author" type="text" placeholder="John" required onChange={(ev) => setCardData({ ...cardData, author: ev.target.value })} />
+                <input id="author" name="author" className="author" type="text" placeholder="Author *" required onChange={handleChange} />
 
-                <label htmlFor="title" className="main__form--label">Title</label>
-                <input id="title" name="title" className="title" type="text" placeholder="Summer party" required onChange={(ev) => setCardData({ ...cardData, title: ev.target.value })} />
+                <input id="title" name="title" className="title" type="text" placeholder="Title *" required onChange={handleChange} />
 
-                <label htmlFor="description" className="main__form--label">Description</label>
-                <textarea id="description" name="description" className="description" type="text" placeholder="This summer was..." required onChange={(ev) => setCardData({ ...cardData, description: ev.target.value })} />
+                <textarea id="description" name="description" className="description" type="text" placeholder="Description *" required onChange={handleChange} />
 
-                <label htmlFor="tags" className="main__form--label">Tags</label>
-                <input id="tags" name="tags" className="tags" type="text" placeholder="summer, party, fun" required onChange={(ev) => setCardData({ ...cardData, tags: ev.target.value })} />
+                <input id="tags" name="tags" className="tags" type="text" placeholder="Tags (comma separated) *" required onChange={handleChange} />
 
-                <label htmlFor="url" className="main__form--label">Url</label>
-                <input id="url" name="url" className="url" type="text" placeholder="https://images.unsplash.com/photo..." required onChange={(ev) => setCardData({ ...cardData, url: ev.target.value })} />
+                <input id="url" name="url" className="url" type="text" placeholder="Image Url *" required onChange={handleChange} />
 
-                <div className="main__form--buttons">
-                    <button className="main__form--add--card" type="submit">Create</button>
-                    <button className="main__form--clear--form" onClick={clearForm}>Clear</button>
-                </div>
+                <button className="main__form--add--card" type="submit">CREATE</button>
+                <button className="main__form--clear--form" onClick={clearForm}>CLEAR</button>
             </form>
         </main>
     );
