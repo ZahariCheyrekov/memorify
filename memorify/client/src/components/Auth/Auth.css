@@ -65,6 +65,7 @@
     letter-spacing: 1px;
     padding: 6px;
     margin: 10px 0 0;
+    transition: all ease-in-out 0.2s;
 }
 
 .form__button--signin.google {
@@ -75,9 +76,18 @@
     background-color: rgb(21, 42, 72);
 }
 
-.form__auth--question {
+.form__auth--action--button {
     position: absolute;
     right: 16px;
     bottom: 16px;
     font-size: 0.9rem;
+    padding: 4px;
+    border-radius: 2px;
+    border: none;
+    background-color: transparent;
+    transition: all ease-in-out 0.2s;
+}
+
+.form__auth--action--button:hover {
+    background-color: rgb(240, 240, 240);
 }
