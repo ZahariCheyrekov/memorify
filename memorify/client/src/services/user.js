@@ -1,7 +1,8 @@
-import * as api from '../api/requester';
+import * as api from '../api/requester.js';
 
-export const signup = (formData, navigate) => {
+export const signup = async (formData, navigate) => {
     try {
+        const { data } = await api.signup(formData);
 
         navigate('/');
     } catch (error) {
@@ -9,8 +10,9 @@ export const signup = (formData, navigate) => {
     }
 }
 
-export const signin = (formData, navigate) => {
+export const signin = async (formData, navigate) => {
     try {
+        const { data } = await api.signin(formData);
 
         navigate('/');
     } catch (error) {
