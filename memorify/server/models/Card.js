@@ -4,6 +4,8 @@ const cardSchema = mongoose.Schema({
     author: String,
     title: String,
     description: String,
+    name: String,
+    creator: String,
     tags: [String],
     url: String,
     likes: {
