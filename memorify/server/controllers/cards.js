@@ -12,6 +12,18 @@ export const getCards = async (req, res) => {
     }
 }
 
+export const getCard = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const card = await CardSchema.findById(id);
+        res.status(200).json(card);
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const createCard = async (req, res) => {
     const card = req.body;
     const newCard = new CardSchema(card);
