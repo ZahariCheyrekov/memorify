@@ -20,7 +20,7 @@ const Auth = () => {
 
             <label className="form__label--password" htmlFor="password">
                 <input id="password" name="password" className="password" type={showPassword ? "text" : "password"} placeholder="Password *" required />
-                <i className="fa-solid fa-eye" onClick={() => setSowPassword(state => !state)}></i>
+                <i className="fa-solid fa-eye" onClick={() => setSowPassword((state) => !state)}></i>
             </label>
 
             <button className="form__button--signin" type="submit">SIGN IN</button>
@@ -30,9 +30,9 @@ const Auth = () => {
                 GOOGLE SIGN IN
             </button>
 
-            <p className="form__auth--question">
+            <button className="form__auth--action--button">
                 DONT'T HAVE AN ACCOUNT? SIGH UP
-            </p>
+            </button>
         </form>
     );
 }
