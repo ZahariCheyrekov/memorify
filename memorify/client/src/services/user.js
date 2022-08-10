@@ -3,8 +3,9 @@ import * as api from '../api/requester.js';
 export const signup = async (formData, navigate) => {
     try {
         const { data } = await api.signup(formData);
+        localStorage.setItem('user', JSON.stringify(data));
+
         return data;
-        navigate('/');
     } catch (error) {
         console.log(error);
     }
@@ -13,8 +14,9 @@ export const signup = async (formData, navigate) => {
 export const signin = async (formData, navigate) => {
     try {
         const { data } = await api.signin(formData);
+        localStorage.setItem('user', JSON.stringify(data));
+
         return data;
-        navigate('/');
     } catch (error) {
         console.log(error);
     }

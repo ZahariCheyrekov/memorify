@@ -74,7 +74,7 @@ export const likeCard = async (req, res) => {
     }
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json(`No card with id: ${id}`);
+        return res.status(404).send(`No card with id: ${id}`);
     }
 
     const card = await CardSchema.findById(id);

@@ -2,11 +2,20 @@ import axios from 'axios';
 
 import { baseUrl, cardsUrl } from '../constants/urls';
 
-export const fetchCards = () => axios.get(cardsUrl);
-export const createCard = (cardData) => axios.post(cardsUrl, cardData);
-export const updateCard = (id, cardData) => axios.patch(`${cardsUrl}/${id}`, cardData);
-export const likeCard = (id) => axios.patch(`${cardsUrl}/${id}/likeCard`);
-export const deleteCard = (id) => axios.delete(`${cardsUrl}/${id}`);
+const API = axios.create({ baseURL: baseUrl });
 
-export const signin = (data) => axios.post(`${baseUrl}/user/signin`, data);
-export const signup = (data) => axios.post(`${baseUrl}/user/signup`, data);
+API.interceptors.request.use((req) => {
+    if (localStorage.getItem('user')) {
+        req.headers.authorization = `Bearer ${JSON.parse(localStorage.getItem('user')).token}`;
+    }
+    return req;
+});
+
+export const fetchCards = () => API.get(cardsUrl);
+export const createCard = (cardData) => API.post('/memories', cardData);
+export const updateCard = (id, cardData) => API.patch(`/memories/${id}`, cardData);
+export const likeCard = (id) => API.patch(`${cardsUrl}/${id}/likeCard`);
+export const deleteCard = (id) => API.delete(`${cardsUrl}/${id}`);
+
+export const signin = (data) => API.post(`/user/signin`, data);
+export const signup = (data) => API.post(`/user/signup`, data);

@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
 import cardsRoutes from './routes/cards.js';
-import userRoutes from './routes/user.js';
+import userRoutes from './routes/users.js';
 import { configDatabase } from './config/configDatabase.js';
 
 const app = express();
