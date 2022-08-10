@@ -3,8 +3,7 @@
     margin: 100px auto;
 
     background-color: #fff;
-    border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 2px;
 }
 
 .main__form {
@@ -17,32 +16,31 @@
     font-size: 1.6rem;
 }
 
-.main__form--label {
-    margin: 20px 0 6px;
-    font-size: 1.2rem;
-}
-
 .main__form input,
 .main__form textarea {
     outline: none;
     padding: 6px;
+    margin: 10px 0;
+    height: 40px;
 }
 
-.main__form--buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+.main__form textarea {
+    height: 70px;
 }
 
 .main__form button {
-    width: 40%;
     color: #fff;
     font-weight: bold;
     font-size: 1rem;
 
     border: none;
     border-radius: 2px;
-    padding: 6px;
+
+    margin: 5px 0;
+    padding: 8px;
+
+    letter-spacing: 1px;
+    font-weight: normal;
 }
 
 .main__form--add--card {
