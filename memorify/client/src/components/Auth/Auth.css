@@ -4,15 +4,27 @@
 
     margin: 100px auto;
     max-width: 400px;
-    height: 400px;
     padding: 40px 16px;
 
     background-color: #fff;
     border-radius: 2px;
 }
 
+.fa-solid.fa-lock {
+    background-color: rgb(18, 39, 69);
+    text-align: center;
+    width: 12%;
+    margin: 0 auto;
+    border-radius: 50%;
+    color: #fff;
+    padding: 12px;
+    font-size: 1.2rem;
+}
+
 .form__auth--legend {
     font-size: 1.4rem;
+    text-align: center;
+    margin: 10px 0;
 }
 
 .form__auth input {
