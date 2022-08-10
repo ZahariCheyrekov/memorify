@@ -26,7 +26,7 @@ export const getCards = async (req, res) => {
 
 export const createCard = async (req, res) => {
     const card = req.body;
-    const newCard = new CardSchema({ ...card, cretor: req.userId ,createdAt:new Date.toIsoString()});
+    const newCard = new CardSchema({ ...card, cretor: req.userId, createdAt: new Date.toIsoString() });
 
     try {
         await newCard.save();

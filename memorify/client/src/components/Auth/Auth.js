@@ -26,7 +26,6 @@ const Auth = () => {
             console.log(formData)
             signup(formData, navigate);
         }
-
     }
 
     const handleChange = (ev) => {

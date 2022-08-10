@@ -14,7 +14,7 @@ const Form = () => {
         createCard(cardData);
         ev.target.reset();
 
-        navigate('/cards');
+        navigate('/memories');
     }
 
     const handleChange = (ev) => {
