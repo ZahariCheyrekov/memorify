@@ -65,3 +65,29 @@ export const deleteCard = async (req, res) => {
         res.status().json({});
     }
 }
+
+export const likeCard = async (req, res) => {
+    const { id } = req.params;
+
+    if (!req.userId) {
+        return res.json({ message: 'Unauthenticated' });
+    }
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json(`No card with id: ${id}`);
+    }
+
+    const card = await CardSchema.findById(id);
+
+    const index = card.likes.findIndex((id) => id === String(req.userId));
+
+    if (index === -1) {
+        card.likes.push(req.userId);
+    } else {
+        card.likes = card.likes.filter((id) => id !== String(req.userId));
+    }
+
+    const updatedPost = await CardSchema.findByIdAndUpdate(id, card, { new: true });
+
+    res.json(updatedPost);
+}
