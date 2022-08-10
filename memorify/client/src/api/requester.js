@@ -15,7 +15,7 @@ export const fetchCards = () => API.get(cardsUrl);
 export const createCard = (cardData) => API.post('/memories', cardData);
 export const updateCard = (id, cardData) => API.patch(`/memories/${id}`, cardData);
 export const likeCard = (id) => API.patch(`${cardsUrl}/${id}/likeCard`);
-export const deleteCard = (id) => API.delete(`${cardsUrl}/${id}`);
+export const deleteCard = (id) => API.delete(`/memories/${id}`);
 
 export const signin = (data) => API.post(`/user/signin`, data);
 export const signup = (data) => API.post(`/user/signup`, data);
