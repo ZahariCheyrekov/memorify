@@ -3,7 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
-import { cardsRoutes, userRoutes } from './routes/cards.js';
+import cardsRoutes from './routes/cards.js';
+import userRoutes from './routes/user.js';
 import { configDatabase } from './config/configDatabase.js';
 
 const app = express();
