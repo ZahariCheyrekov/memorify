@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import './CardDetails.css';
 import { getCard } from '../../../services/cards';
 
 const CardDetails = () => {
