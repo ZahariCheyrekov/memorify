@@ -12,7 +12,7 @@ const Form = () => {
     const handleSubmit = async (ev) => {
         ev.preventDefault();
 
-        createCard({ ...cardData, name: user?.result?.name });
+        createCard({ ...cardData, name: user?.result?.name, creatorId: user?.result?._id });
         ev.target.reset();
 
         navigate('/memories');
