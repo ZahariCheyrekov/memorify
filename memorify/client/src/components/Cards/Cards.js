@@ -24,10 +24,7 @@ const Cards = () => {
                         key={card._id}
                         id={card._id}
                         name={card.name}
-                        creatorId={card.creatorId}
                         createdAt={card.createdAt}
-                        description={card.description}
-                        likeCount={card.likeCount}
                         url={card.url}
                         tags={card.tags}
                         title={card.title}
