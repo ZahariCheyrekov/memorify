@@ -1,14 +1,10 @@
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './Card.css';
-import { deleteCard } from '../../../api/requester';
 
 const Card = ({ id,
     name,
-    creatorId,
     createdAt,
-    description,
-    likeCount,
     url,
     tags,
     title
