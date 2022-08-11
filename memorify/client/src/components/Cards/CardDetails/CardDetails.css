@@ -60,6 +60,16 @@
 }
 
 .section__aside--actions i {
-    padding-left: 20px;
+    margin-left: 20px;
     font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.fa-solid.fa-pen-to-square {
+    color: rgb(28, 28, 150);
+}
+
+.fa-solid.fa-trash,
+.fa-solid.fa-heart {
+    color: rgb(156, 20, 20);
 }
