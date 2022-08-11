@@ -11,7 +11,7 @@ const Card = ({ id,
 }) => {
     return (
         <Link to={`/memories/${id}`}>
-            <li
+            <li 
                 id={id}
                 className="cards__card"
             >
