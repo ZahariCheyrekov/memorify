@@ -8,19 +8,18 @@
 }
 
 .card__img--article {
-    max-height: 200px;
     position: relative;
+    height: 200px;
 }
 
 .card__img--article img {
     border-radius: 10px 10px 0 0;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .card__img--article::after {
     position: absolute;
     content: "";
-    height: 173.41px;
     opacity: 0.4;
     top: 0;
     right: 0;
