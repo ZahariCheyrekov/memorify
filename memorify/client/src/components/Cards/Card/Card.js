@@ -10,7 +10,7 @@ const Card = ({ id,
     title
 }) => {
     return (
-        <Link to={`/memories${id}`}>
+        <Link to={`/memories/${id}`}>
             <li
                 id={id}
                 className="cards__card"
