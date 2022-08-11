@@ -50,20 +50,15 @@ export const updateCard = async (req, res) => {
 }
 
 export const deleteCard = async (req, res) => {
-    try {
-        const { id } = req.params;
+    const { id } = req.params;
 
-        if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(404).send(`No card with id: ${id}`);
-        }
-
-        await CardSchema.findByIdAndRemove(id);
-
-        res.json({ message: 'Card was deleted successfully.' });
-
-    } catch (error) {
-        res.status().json({});
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send(`No card with id: ${id}`);
     }
+
+    await CardSchema.findByIdAndRemove(id);
+
+    res.json({ message: 'Card was deleted successfully.' });
 }
 
 export const likeCard = async (req, res) => {
