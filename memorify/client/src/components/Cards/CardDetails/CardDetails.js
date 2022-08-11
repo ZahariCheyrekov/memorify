@@ -62,7 +62,7 @@ const CardDetails = () => {
                 <aside className="section__aside--actions">
                     <i className="fa-solid fa-pen-to-square"></i>
                     <i className="fa-solid fa-trash"></i>
-                    <i className="fa-solid fa-thumbs-up"></i>
+                    <i className="fa-solid fa-heart"></i>
                 </aside>
             </section>
         </main>
