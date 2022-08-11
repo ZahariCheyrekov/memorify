@@ -6,12 +6,13 @@ import './Form.css';
 
 const Form = () => {
     const navigate = useNavigate();
-    const [cardData, setCardData] = useState({ author: '', title: '', description: '', tags: '', url: '' });
+    const [cardData, setCardData] = useState({ title: '', description: '', tags: '', url: '' });
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const handleSubmit = async (ev) => {
         ev.preventDefault();
 
-        createCard(cardData);
+        createCard({ ...cardData, name: user?.result?.name });
         ev.target.reset();
 
         navigate('/memories');
@@ -31,7 +32,7 @@ const Form = () => {
             <form className="main__form" onSubmit={handleSubmit}>
                 <legend className="main__form--legend">Create memory</legend>
 
-                <input id="author" name="author" className="author" type="text" placeholder="Author *" required onChange={handleChange} />
+                {/* <input id="author" name="author" className="author" type="text" placeholder="Author *" required onChange={handleChange} /> */}
 
                 <input id="title" name="title" className="title" type="text" placeholder="Title *" required onChange={handleChange} />
 
