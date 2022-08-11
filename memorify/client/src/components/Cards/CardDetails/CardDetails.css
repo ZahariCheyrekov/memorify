@@ -2,10 +2,11 @@
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
+    position: relative;
     gap: 2rem;
 
     margin: 100px auto;
-    padding: 18px;
+    padding: 20px 20px 70px;
 
     background-color: #fff;
     border-radius: 10px;
@@ -45,9 +46,20 @@
 }
 
 .section__article--img {
-    max-height: 350px;
+    max-height: 400px;
 }
 
 .section__article--img img {
     border-radius: 10px;
+}
+
+.section__aside--actions {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+}
+
+.section__aside--actions i {
+    padding-left: 20px;
+    font-size: 1.8rem;
 }
