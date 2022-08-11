@@ -1,0 +1,10 @@
+.main__section {
+    max-width: 1200px;
+    display: flex;
+
+    margin: 150px auto;
+    padding: 22px;
+
+    background-color: #fff;
+    border-radius: 10px;
+}
