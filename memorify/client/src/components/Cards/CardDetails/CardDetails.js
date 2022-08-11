@@ -1,12 +1,18 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import './CardDetails.css';
+
 import { getCard } from '../../../services/cards';
+import { deleteCard, likeCard } from '../../../api/requester';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 const CardDetails = () => {
+    const navigate = useNavigate();
+    const user = useContext(AuthContext);
     const [card, setCard] = useState({});
     const [tags, setTags] = useState([]);
+    const [likes, setLikes] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
@@ -15,10 +21,13 @@ const CardDetails = () => {
 
     const getCardById = async () => {
         const card = await getCard(id);
-        setTags(card.tags[0].split(/,\s+/));
 
+        setTags(card.tags[0].split(/,\s+/));
+        setLikes(card.likes);
         setCard(card);
     }
+
+    const isOwner = user?.result?._id === card.creatorId;
 
     return (
         <main className="main__card--details">
@@ -60,9 +69,19 @@ const CardDetails = () => {
                 </article>
 
                 <section className="section__aside--actions">
-                    <i className="fa-solid fa-pen-to-square"></i>
-                    <i className="fa-solid fa-trash"></i>
-                    <i className="fa-solid fa-heart"></i>
+                    {isOwner && (
+                        <>
+                            <i className="fa-solid fa-pen-to-square"></i>
+                            <i className="fa-solid fa-trash" onClick={() => deleteCard(id, navigate)}></i>
+                        </>
+                    )}
+
+                    <p>
+                        Likes: {likes.length}
+                    </p>
+                    {!isOwner && (
+                        <i className="fa-solid fa-heart" onClick={() => likeCard(id)}></i>
+                    )}
                 </section>
             </section>
         </main>
