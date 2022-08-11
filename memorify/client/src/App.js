@@ -3,6 +3,8 @@ import './index.css';
 
 import { Route, Routes } from 'react-router-dom';
 
+import { AuthContextProvider } from './contexts/AuthContext';
+
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Form from './components/Form/Form';
@@ -12,7 +14,7 @@ import Auth from './components/Auth/Auth';
 
 function App() {
     return (
-        <>
+        <AuthContextProvider>
             <Header />
             <Routes>
                 <Route path='/' element={<Home />} />
@@ -21,7 +23,7 @@ function App() {
                 <Route path='/memories/:id' element={<CardDetails />} />
                 <Route path='/auth' element={<Auth />} />
             </Routes>
-        </>
+        </AuthContextProvider>
     );
 }
 
