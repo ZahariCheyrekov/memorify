@@ -29,19 +29,25 @@ const CardDetails = () => {
                     </h1>
 
                     <div className="section__card--author">
-                        <strong>Created by:</strong> {card.name}
+                        <strong>Created by:&nbsp;</strong> {card.name}&nbsp;/&nbsp;
+
+                        <p className="section__card--createdat">
+                            {new Date(card.createdAt).toUTCString().slice(0, -7)}
+                        </p>
                     </div>
 
                     <p className="section__card--tags">
                         <strong>Tags:</strong>
                         &nbsp;
-                        {tags &&
-                            tags.map(tag =>
-                                <span id={tag} key={tag}>#{tag}
-                                    &nbsp;
-                                </span>
-                            )
-                        }
+                        <span className="section__card--span--tags">
+                            {tags &&
+                                tags.map(tag =>
+                                    <span id={tag} key={tag}>#{tag}
+                                        &nbsp;
+                                    </span>
+                                )
+                            }
+                        </span>
                     </p>
 
                     <p className="section__card--description">
@@ -52,6 +58,12 @@ const CardDetails = () => {
                 <article className="section__article--img">
                     <img src={card.url} alt="memory" />
                 </article>
+
+                <aside className="section__aside--actions">
+                    <i className="fa-solid fa-pen-to-square"></i>
+                    <i className="fa-solid fa-trash"></i>
+                    <i className="fa-solid fa-thumbs-up"></i>
+                </aside>
             </section>
         </main>
     );
