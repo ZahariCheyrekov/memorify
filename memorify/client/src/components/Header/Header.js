@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 
 import './Header.css';
 import decode from 'jwt-decode';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const Header = () => {
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+    const user = useContext(AuthContext);
 
     useEffect(() => {
         const token = user?.token;
@@ -17,13 +18,10 @@ export const Header = () => {
                 logout();
             }
         }
-
-        setUser(JSON.parse(localStorage.getItem('user')));
     }, [user?.token]);
 
     const logout = () => {
         localStorage.clear();
-        setUser(null);
     }
 
     return (
