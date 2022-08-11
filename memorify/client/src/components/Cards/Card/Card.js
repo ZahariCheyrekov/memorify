@@ -4,7 +4,8 @@ import './Card.css';
 import { deleteCard } from '../../../api/requester';
 
 const Card = ({ id,
-    author,
+    name,
+    creatorId,
     createdAt,
     description,
     likeCount,
@@ -12,11 +13,13 @@ const Card = ({ id,
     tags,
     title
 }) => {
+    const userId = JSON.parse(localStorage.getItem('user')).result._id;
+    const hasDelete = userId === creatorId;
 
     const handleDelete = () => {
         deleteCard(id);
     }
-
+    
     return (
         <Link to={`/memories/${id}`}>
             <li
@@ -32,7 +35,7 @@ const Card = ({ id,
                         {title}
                     </h2>
                     <h2 className="card__author">
-                        {author}
+                        {name}
                     </h2>
                     <p className="card__content">
                         {tags}
@@ -40,9 +43,12 @@ const Card = ({ id,
                     <p className="card__createdAt">
                         {createdAt}
                     </p>
-                    <button className="card__button--delete" onClick={handleDelete}>
-                        Delete
-                    </button>
+
+                    {hasDelete &&
+                        <button className="card__button--delete" onClick={handleDelete}>
+                            Delete
+                        </button>
+                    }
                 </div>
             </li>
         </Link>
