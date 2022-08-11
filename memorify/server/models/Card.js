@@ -3,10 +3,10 @@ import mongoose from 'mongoose';
 const cardSchema = mongoose.Schema({
     title: String,
     description: String,
-    name: String,
-    creator: String,
     tags: [String],
     url: String,
+    name: String,
+    creatorId: String,
     likes: {
         type: [String],
         default: []
