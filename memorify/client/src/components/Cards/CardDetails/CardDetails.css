@@ -23,12 +23,19 @@
 
 .section__card--author {
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .section__card--tags {
     margin-bottom: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+.section__card--span--tags {
+    font-style: italic;
+    color: rgb(100, 100, 100);
 }
 
 .section__card--description {
