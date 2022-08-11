@@ -23,7 +23,8 @@ const Cards = () => {
                     <Card
                         key={card._id}
                         id={card._id}
-                        author={card.author}
+                        name={card.name}
+                        creatorId={card.creatorId}
                         createdAt={card.createdAt}
                         description={card.description}
                         likeCount={card.likeCount}
