@@ -15,7 +15,7 @@ const CardDetails = () => {
 
     const getCardById = async () => {
         const card = await getCard(id);
-        setTags(card.tags[0].split(', '));
+        setTags(card.tags[0].split(/,\s+/));
 
         setCard(card);
     }
@@ -28,23 +28,24 @@ const CardDetails = () => {
                         {card.title}
                     </h1>
 
-                    <span className="section__card--author">
-                        Created by: {card.name}
-                    </span>
+                    <div className="section__card--author">
+                        <strong>Created by:</strong> {card.name}
+                    </div>
 
                     <p className="section__card--tags">
-                        Tags:
+                        <strong>Tags:</strong>
                         &nbsp;
                         {tags &&
                             tags.map(tag =>
                                 <span id={tag} key={tag}>#{tag}
                                     &nbsp;
-                                </span>)
+                                </span>
+                            )
                         }
                     </p>
 
                     <p className="section__card--description">
-                        {card.description};
+                        {card.description}
                     </p>
                 </div>
 
