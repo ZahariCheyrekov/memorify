@@ -1,23 +1,18 @@
 import * as api from '../api/requester.js';
 import { saveUser } from '../utils/localStorage.js';
 
-export const signup = async (formData) => {
+export const auth = async (action, data) => {
     try {
-        const { data } = await api.signup(formData);
-        saveUser(data);
+        let result;
 
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
-}
+        if (action === 'signin') {
+            result = await api.signin(data);
+        } else if (action === 'signup') {
+            result = await api.signup(data);
+        }
 
-export const signin = async (formData) => {
-    try {
-        const { data } = await api.signin(formData);
-        saveUser(data);
-
-        return data;
+        const user = result.data;
+        saveUser(user);
     } catch (error) {
         console.log(error);
     }
