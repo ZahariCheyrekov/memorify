@@ -1,9 +1,11 @@
+import { USER } from '../constants/user';
+
 export const saveUser = (user) => {
-    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem(USER, JSON.stringify(user));
 }
 
 export const getUser = () => {
-    const serializedUser = localStorage.getItem('user');
+    const serializedUser = localStorage.getItem(USER);
 
     if (serializedUser) {
         const user = JSON.parse(serializedUser);
