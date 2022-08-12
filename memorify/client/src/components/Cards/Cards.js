@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import './Cards.css';
 import Card from './Card/Card';
+
 import { getCards } from '../../services/cards';
 
 const Cards = () => {
@@ -30,7 +31,7 @@ const Cards = () => {
                         title={card.title}
                     />
                 )
-                : ' No cards'
+                : <h1>No cards</h1>
             }
         </ul>
     );
