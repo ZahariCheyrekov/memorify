@@ -42,6 +42,7 @@ const Form = ({ id }) => {
 
     const clearData = (ev) => {
         ev.preventDefault();
+        ev.target.parentNode.reset();
         setCardData({ title: '', description: '', tags: '', url: '' });
     }
 
