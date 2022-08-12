@@ -1,9 +1,10 @@
 import * as api from '../api/requester.js';
+import { saveUser } from '../utils/localStorage.js';
 
-export const signup = async (formData, navigate) => {
+export const signup = async (formData) => {
     try {
         const { data } = await api.signup(formData);
-        localStorage.setItem('user', JSON.stringify(data));
+        saveUser(data);
 
         return data;
     } catch (error) {
@@ -11,10 +12,10 @@ export const signup = async (formData, navigate) => {
     }
 }
 
-export const signin = async (formData, navigate) => {
+export const signin = async (formData) => {
     try {
         const { data } = await api.signin(formData);
-        localStorage.setItem('user', JSON.stringify(data));
+        saveUser(data);
 
         return data;
     } catch (error) {
