@@ -86,3 +86,16 @@ export const likeCard = async (req, res) => {
 
     res.json(updatedPost);
 }
+
+export const postComment = async (req, res) => {
+    const { id } = req.params;
+    const { comment } = req.body;
+
+    const card = await CardSchema.findById(id);
+
+    card.comments.push(comment);
+
+    const updatedCard = await CardSchema.findByIdAndUpdate(id, card, { new: true });
+
+    res.json(updatedCard);
+}
