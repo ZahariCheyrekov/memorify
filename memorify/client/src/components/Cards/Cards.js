@@ -19,7 +19,7 @@ const Cards = () => {
 
     return (
         <ul className="cards">
-            {cards
+            {cards.length > 0
                 ? cards.map(card =>
                     <Card
                         key={card._id}
