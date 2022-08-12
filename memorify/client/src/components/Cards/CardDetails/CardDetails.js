@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import './CardDetails.css';
 
-import { getCard } from '../../../services/cards';
+import { getCard, getCards } from '../../../services/cards';
 import { deleteCard, likeCard } from '../../../api/requester';
 import { AuthContext } from '../../../contexts/AuthContext';
 
@@ -11,15 +11,18 @@ const CardDetails = () => {
     const navigate = useNavigate();
     const user = useContext(AuthContext);
     const [card, setCard] = useState({});
+    const [cards, setCards] = useState([]);
     const [tags, setTags] = useState([]);
     const [likes, setLikes] = useState([]);
     const { id } = useParams();
+    const isOwner = user?.result?._id === card.creatorId;
 
     useEffect(() => {
-        getCardById();
+        fetchCards();
+        fetchCard();
     }, []);
 
-    const getCardById = async () => {
+    const fetchCard = async () => {
         const card = await getCard(id);
 
         setTags(card.tags[0].split(/,\s+/));
@@ -27,7 +30,11 @@ const CardDetails = () => {
         setCard(card);
     }
 
-    const isOwner = user?.result?._id === card.creatorId;
+    const fetchCards = async () => {
+        const cards = await getCards();
+        const filtered = cards.filter(cd => cd._id !== id && cd.tags.includes(card.tags));
+        setCards(filtered);
+    }
 
     return (
         <main className="main__card--details">
@@ -36,7 +43,6 @@ const CardDetails = () => {
                     <h1 className="section__card--title">
                         {card.title}
                     </h1>
-
                     <div className="section__card--author">
                         <strong>Created by:&nbsp;</strong> {card.name}&nbsp;/&nbsp;
 
@@ -44,7 +50,6 @@ const CardDetails = () => {
                             {new Date(card.createdAt).toDateString()}
                         </p>
                     </div>
-
                     <p className="section__card--tags">
                         <strong>Tags:</strong>
                         &nbsp;
@@ -54,20 +59,29 @@ const CardDetails = () => {
                                     <span id={tag} key={tag}>#{tag}
                                         &nbsp;
                                     </span>
-                                )
-                            }
+                                )}
                         </span>
                     </p>
-
                     <p className="section__card--description">
                         {card.description}
                     </p>
+                    <div>
+                        {cards
+                            ? cards.map(({ _id, name }) =>
+                                <li
+                                    key={_id}
+                                    id={_id}
+                                >
+                                    {name}
+                                </li>
+                            )
+                            : <h1>No cards</h1>
+                        }
+                    </div>
                 </div>
-
                 <article className="section__article--img">
                     <img src={card.url} alt="memory" />
                 </article>
-
                 <section className="section__aside--actions">
                     {isOwner && (
                         <>
@@ -77,7 +91,6 @@ const CardDetails = () => {
                             <i className="fa-solid fa-trash" onClick={() => deleteCard(id, navigate)}></i>
                         </>
                     )}
-
                     <p>
                         Likes: {likes.length}
                     </p>
@@ -86,7 +99,7 @@ const CardDetails = () => {
                     )}
                 </section>
             </section>
-        </main>
+        </main >
     );
 }
 
