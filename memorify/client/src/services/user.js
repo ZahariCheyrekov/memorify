@@ -1,13 +1,15 @@
-import * as api from '../api/requester.js';
-import { saveUser } from '../utils/localStorage.js';
+import * as api from '../api/requester';
+
+import { saveUser } from '../utils/localStorage';
+import { SIGNIN, SIGNUP } from '../constants/action';
 
 export const auth = async (action, data) => {
     try {
         let result;
 
-        if (action === 'signin') {
+        if (action === SIGNIN) {
             result = await api.signin(data);
-        } else if (action === 'signup') {
+        } else if (action === SIGNUP) {
             result = await api.signup(data);
         }
 
