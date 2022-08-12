@@ -5,7 +5,7 @@ import { getUser } from '../utils/localStorage';
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-    const [currentUser, setCurrentUser] = useState();
+    const [currentUser, setCurrentUser] = useState({});
 
     useEffect(() => {
         const user = getUser();
