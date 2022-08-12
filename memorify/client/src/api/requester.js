@@ -12,7 +12,7 @@ API.interceptors.request.use((req) => {
 });
 
 export const fetchCards = () => API.get(cardsUrl);
-export const fetchCard = (id) => API.get(`memories/${id}`);
+export const fetchCard = (id) => API.get(`/memories/${id}`);
 export const createCard = (cardData) => API.post('/memories', cardData);
 export const updateCard = (id, cardData) => API.patch(`/memories/${id}`, cardData);
 export const likeCard = (id) => API.patch(`/memories/${id}/likeCard`);
