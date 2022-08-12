@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import './Auth.css';
 import { auth } from '../../services/user';
+import { SIGNIN, SIGNUP } from '../../constants/action';
+
+import './Auth.css';
 
 const Auth = () => {
     const navigate = useNavigate();
@@ -13,7 +15,7 @@ const Auth = () => {
     const handleSubmit = (ev) => {
         ev.preventDefault();
 
-        isSignIn ? auth('signin', formData) : auth('signup', formData);
+        isSignIn ? auth(SIGNIN, formData) : auth(SIGNUP, formData);
 
         navigate('/');
     }
