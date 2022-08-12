@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import './CardDetails.css';
 
@@ -41,7 +41,7 @@ const CardDetails = () => {
                         <strong>Created by:&nbsp;</strong> {card.name}&nbsp;/&nbsp;
 
                         <p className="section__card--createdat">
-                            {new Date(card.createdAt).toUTCString().slice(0, -7)}
+                            {new Date(card.createdAt).toDateString()}
                         </p>
                     </div>
 
@@ -71,7 +71,9 @@ const CardDetails = () => {
                 <section className="section__aside--actions">
                     {isOwner && (
                         <>
-                            <i className="fa-solid fa-pen-to-square"></i>
+                            <Link to={`/memories/${id}/edit`}>
+                                <i className="fa-solid fa-pen-to-square"></i>
+                            </Link>
                             <i className="fa-solid fa-trash" onClick={() => deleteCard(id, navigate)}></i>
                         </>
                     )}
