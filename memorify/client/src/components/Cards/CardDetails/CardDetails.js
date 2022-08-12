@@ -6,6 +6,7 @@ import './CardDetails.css';
 import { getCard, getCards } from '../../../services/cards';
 import { deleteCard, likeCard } from '../../../api/requester';
 import { AuthContext } from '../../../contexts/AuthContext';
+import CommentSection from './CommentSection/CommentSection';
 
 const CardDetails = () => {
     const navigate = useNavigate();
@@ -65,23 +66,14 @@ const CardDetails = () => {
                     <p className="section__card--description">
                         {card.description}
                     </p>
-                    <div>
-                        {cards
-                            ? cards.map(({ _id, name }) =>
-                                <li
-                                    key={_id}
-                                    id={_id}
-                                >
-                                    {name}
-                                </li>
-                            )
-                            : <h1>No cards</h1>
-                        }
-                    </div>
+
+                    <CommentSection />
                 </div>
+
                 <article className="section__article--img">
                     <img src={card.url} alt="memory" />
                 </article>
+
                 <section className="section__aside--actions">
                     {isOwner && (
                         <>
@@ -98,6 +90,7 @@ const CardDetails = () => {
                         <i className="fa-solid fa-heart" onClick={() => likeCard(id)}></i>
                     )}
                 </section>
+
             </section>
         </main >
     );
