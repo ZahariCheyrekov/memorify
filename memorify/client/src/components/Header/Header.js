@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import './Header.css';
 import decode from 'jwt-decode';
 import { AuthContext } from '../../contexts/AuthContext';
+import { removeUser } from '../../utils/localStorage';
 
 export const Header = () => {
     const user = useContext(AuthContext);
@@ -15,14 +16,10 @@ export const Header = () => {
             const decodedToken = decode(token);
 
             if (decodedToken.exp * 1000 < new Date().getTime()) {
-                logout();
+                removeUser();
             }
         }
     }, [user?.token]);
-
-    const logout = () => {
-        localStorage.clear();
-    }
 
     return (
         <header className="header">
@@ -37,7 +34,7 @@ export const Header = () => {
                         ?
                         <>
                             <Link to={'/create'}>Create</Link>
-                            <Link onClick={logout} to={'/'}>Logout</Link>
+                            <Link onClick={removeUser} to={'/'}>Logout</Link>
                         </>
                         : <Link to={'/auth'}>Sign In</Link>
                     }
