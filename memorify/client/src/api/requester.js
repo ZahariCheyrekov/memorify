@@ -1,12 +1,16 @@
 import axios from 'axios';
 
-import { baseUrl, cardsUrl } from '../constants/urls';
+import { baseUrl, cardsUrl } from '../constants/url';
+import { getToken, getUser } from '../utils/localStorage';
 
 const API = axios.create({ baseURL: baseUrl });
 
 API.interceptors.request.use((req) => {
-    if (localStorage.getItem('user')) {
-        req.headers.authorization = `Bearer ${JSON.parse(localStorage.getItem('user')).token}`;
+    const user = getUser();
+
+    if (user) {
+        const userToken = getToken();
+        req.headers.authorization = `Bearer ${userToken}`;
     }
     return req;
 });
