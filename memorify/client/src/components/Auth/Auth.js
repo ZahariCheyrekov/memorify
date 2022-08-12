@@ -2,28 +2,18 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './Auth.css';
-import { signin, signup } from '../../services/user';
+import { auth } from '../../services/user';
 
 const Auth = () => {
     const navigate = useNavigate();
     const [isSignIn, setIsSignIn] = useState(true);
     const [showPassword, setSowPassword] = useState(false);
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        repeatPassword: ''
-    });
+    const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', password: '', repeatPassword: '' });
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
 
-        if (isSignIn) {
-            signin(formData, navigate);
-        } else {
-            signup(formData, navigate);
-        }
+        isSignIn ? auth('signin', formData) : auth('signup', formData);
 
         navigate('/');
     }
