@@ -7,6 +7,10 @@ const cardSchema = mongoose.Schema({
     url: String,
     name: String,
     creatorId: String,
+    comments: {
+        type: [String],
+        default: []
+    },
     likes: {
         type: [String],
         default: []
