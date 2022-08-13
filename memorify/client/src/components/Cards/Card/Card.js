@@ -11,7 +11,7 @@ const Card = ({ id,
 }) => {
     return (
         <Link to={`/memories/${id}`}>
-            <li 
+            <li
                 id={id}
                 className="cards__card"
             >
@@ -30,7 +30,7 @@ const Card = ({ id,
                         {tags}
                     </p>
                     <p className="card__createdAt">
-                        {createdAt}
+                        {new Date(createdAt).toDateString()}
                     </p>
                 </div>
             </li>
