@@ -54,7 +54,6 @@ const Auth = () => {
             {!isSignIn && (
                 <label className="form__label--password" htmlFor="repeatPassword">
                     <input id="repeatPassword" name="repeatPassword" className="repeatPassword" type={showPassword ? "text" : "password"} placeholder="Repeat Password *" required onChange={handleChange} />
-                    <i className="fa-solid fa-eye" onClick={() => setSowPassword((state) => !state)}></i>
                 </label>
             )}
 
