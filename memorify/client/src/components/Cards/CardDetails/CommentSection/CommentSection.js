@@ -1,5 +1,5 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { postComment } from '../../../../api/requester';
 
 import { AuthContext } from '../../../../contexts/AuthContext';
@@ -12,6 +12,7 @@ const CommentSection = () => {
     const { id } = useParams();
     const [comment, setComment] = useState('');
     const [comments, setComments] = useState([]);
+    const commentsRef = useRef();
 
     useEffect(() => {
         getComments();
@@ -31,6 +32,8 @@ const CommentSection = () => {
         const data = await postComment(id, userComment);
         const allComments = data.data.comments;
         setComments([...allComments]);
+
+        commentsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     return (
@@ -45,13 +48,14 @@ const CommentSection = () => {
                             <li
                                 key={i}
                                 id={i}
-                                className="ul__comment-el"
+                                className="ul__comment--el"
                             >
                                 {comment}
                             </li>
                         )
                         : <h1>No Comments</h1>
                     }
+                    <div ref={commentsRef} />
                 </ul>
             </section>
             <form className="form__comment--form" onSubmit={handleComment}>
