@@ -13,22 +13,24 @@ const CommentSection = () => {
     const [comment, setComment] = useState('');
     const [comments, setComments] = useState([]);
 
-    const getComments = useCallback(async () => {
-        const card = await getCard(id);
-        setComments(card.comments);
-    }, [comments]);
-
     useEffect(() => {
         getComments();
     }, []);
 
-    const handleComment = (ev) => {
+    const getComments = async () => {
+        const card = await getCard(id);
+        setComments(card.comments);
+    }
+
+    const handleComment = async (ev) => {
         ev.preventDefault();
-        ev.target.parentNode.reset();
         setComment('');
+        ev.target.reset();
 
         const userComment = `${user?.result?.name}: ${comment}`;
-        postComment(id, userComment);
+        const data = await postComment(id, userComment);
+        const allComments = data.data.comments;
+        setComments([...allComments]);
     }
 
     return (
@@ -36,7 +38,21 @@ const CommentSection = () => {
             <h2>
                 Comment section
             </h2>
-            <form>
+            <section>
+                <ul>
+                    {comments.length > 0 && (
+                        comments.map((comment, i) =>
+                            <li
+                                key={i}
+                                id={i}
+                            >
+                                {comment}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </section>
+            <form onSubmit={handleComment}>
                 <input id="comment"
                     name="comment"
                     className="comment"
@@ -45,25 +61,12 @@ const CommentSection = () => {
                     required
                     onChange={(e) => setComment(e.target.value)}
                 />
-                <button onClick={handleComment}>
+                <button type="submit">
                     Post comment
                 </button>
             </form>
-            <section>
-                <ul>
-                    {comments.length > 0 && (
-                        comments.map(comment =>
-                            <li
-                                key={comment}
-                            >
-                                {comment}
-                            </li>
-                        ))
-                    }
-                </ul>
-            </section>
         </section>
-    )
+    );
 }
 
 export default CommentSection;
