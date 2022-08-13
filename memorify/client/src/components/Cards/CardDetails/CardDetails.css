@@ -51,7 +51,7 @@
 }
 
 .section__article--img {
-    max-height: 400px;
+    height: 400px;
 }
 
 .section__article--img img {
@@ -81,4 +81,16 @@
 
 .fa-solid.fa-heart.owner {
     color: rgb(115, 115, 115);
+}
+
+@media only screen and (max-width: 1200px) {
+    .main__section {
+        margin: 50px;
+        flex-direction: column;
+    }
+
+    div.section__card--details {
+        max-width: unset;
+        width: 100%;
+    }
 }
