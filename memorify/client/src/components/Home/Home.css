@@ -3,7 +3,7 @@
     height: 700px;
     letter-spacing: 1px;
 
-    margin: 0 auto;
+    margin: 50px auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -42,4 +42,21 @@
 
 .home__li--item {
     padding: 4px 0;
+}
+
+@media only screen and (max-width: 1050px) {
+    .home__main {
+        flex-direction: column;
+    }
+
+    .home__body {
+        max-width: 70%;
+        margin-bottom: 30px;
+    }
+
+    article.home__img {
+        max-width: unset;
+        width: 70%;
+        transform: rotateZ(0deg);
+    }
 }

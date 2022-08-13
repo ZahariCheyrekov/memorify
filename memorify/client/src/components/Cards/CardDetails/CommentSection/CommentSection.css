@@ -9,17 +9,16 @@
     border-radius: 10px;
 }
 
-.section__comment--title {
-    padding: 0 0 10px;
-    border-bottom: 1px solid black;
-}
-
 .section__comments {
+    max-height: 280px;
+    padding-bottom: 25px;
+    overflow-y: auto;
     margin: 20px 0;
 }
 
-.ul__comment-el {
+.ul__comment--el {
     margin: 10px 0;
+    word-wrap: break-word;
 }
 
 .form__comment--form {
@@ -41,4 +40,10 @@
 
     background-color: rgb(56, 56, 207);
     color: #fff;
+}
+
+@media only screen and (max-width: 1200px) {
+    .section__comment--section {
+        margin: 50px;
+    }
 }
