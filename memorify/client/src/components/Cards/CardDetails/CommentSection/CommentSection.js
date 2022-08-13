@@ -34,25 +34,27 @@ const CommentSection = () => {
     }
 
     return (
-        <section>
-            <h2>
+        <section className="section__comment--section">
+            <h2 className="section__comment--title">
                 Comment section
             </h2>
-            <section>
-                <ul>
-                    {comments.length > 0 && (
-                        comments.map((comment, i) =>
+            <section className="section__comments">
+                <ul className="section__ul--comments">
+                    {comments.length > 0
+                        ? comments.map((comment, i) =>
                             <li
                                 key={i}
                                 id={i}
+                                className="ul__comment-el"
                             >
                                 {comment}
                             </li>
-                        ))
+                        )
+                        : <h1>No Comments</h1>
                     }
                 </ul>
             </section>
-            <form onSubmit={handleComment}>
+            <form className="form__comment--form" onSubmit={handleComment}>
                 <input id="comment"
                     name="comment"
                     className="comment"
@@ -61,8 +63,8 @@ const CommentSection = () => {
                     required
                     onChange={(e) => setComment(e.target.value)}
                 />
-                <button type="submit">
-                    Post comment
+                <button className="form__comment--button" type="submit">
+                    POST
                 </button>
             </form>
         </section>
