@@ -66,7 +66,7 @@
 
 .section__aside--actions i {
     margin-left: 20px;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     cursor: pointer;
 }
 
@@ -79,7 +79,21 @@
     color: rgb(156, 20, 20);
 }
 
-.fa-solid.fa-heart.owner {
+.fa-solid.fa-heart {
+    position: relative;
+}
+
+.card__likes--span {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+
+    font-size: 1rem;
+    color: #fff;
+}
+
+.fa-solid.fa-heart.gray {
     color: rgb(115, 115, 115);
 }
 
