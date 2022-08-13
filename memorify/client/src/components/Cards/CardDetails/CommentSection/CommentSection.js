@@ -58,19 +58,21 @@ const CommentSection = () => {
                     <div ref={commentsRef} />
                 </ul>
             </section>
-            <form className="form__comment--form" onSubmit={handleComment}>
-                <input id="comment"
-                    name="comment"
-                    className="comment"
-                    type="text"
-                    placeholder="Comment"
-                    required
-                    onChange={(e) => setComment(e.target.value)}
-                />
-                <button className="form__comment--button" type="submit">
-                    POST
-                </button>
-            </form>
+            {user && (
+                <form className="form__comment--form" onSubmit={handleComment}>
+                    <input id="comment"
+                        name="comment"
+                        className="comment"
+                        type="text"
+                        placeholder="Comment"
+                        required
+                        onChange={(e) => setComment(e.target.value)}
+                    />
+                    <button className="form__comment--button" type="submit">
+                        POST
+                    </button>
+                </form>
+            )}
         </section>
     );
 }
