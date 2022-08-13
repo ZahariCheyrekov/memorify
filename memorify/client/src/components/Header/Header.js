@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
+
+import decode from 'jwt-decode';
+import Navbar from '../Navbar/Navbar';
+import { removeUser } from '../../utils/localStorage';
 
 import './Header.css';
-import decode from 'jwt-decode';
-import { AuthContext } from '../../contexts/AuthContext';
-import { removeUser } from '../../utils/localStorage';
 
 export const Header = () => {
     const user = useContext(AuthContext);
@@ -26,20 +28,7 @@ export const Header = () => {
             <h2 className="header__title">
                 <Link to={'/'}>Memorify</Link>
             </h2>
-
-            <nav className="header__nav">
-                <ul className="header__ul">
-                    <Link to={'/memories'}>Memories</Link>
-                    {user
-                        ?
-                        <>
-                            <Link to={'/create'}>Create</Link>
-                            <Link onClick={removeUser} to={'/'}>Logout</Link>
-                        </>
-                        : <Link to={'/auth'}>Sign In</Link>
-                    }
-                </ul>
-            </nav>
+            <Navbar />
         </header>
     );
 }
