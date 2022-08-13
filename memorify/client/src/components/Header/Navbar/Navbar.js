@@ -1,15 +1,11 @@
 import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AuthContext } from '../../contexts/AuthContext';
-import { removeUser } from '../../utils/localStorage';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { removeUser } from '../../../utils/localStorage';
 
 const Navbar = () => {
     const user = useContext(AuthContext);
-
-    useEffect(() => {
-
-    }, [user]);
 
     return (
         <nav className="header__nav">
