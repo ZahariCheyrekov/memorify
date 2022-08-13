@@ -3,7 +3,7 @@ import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 
 import decode from 'jwt-decode';
-import Navbar from '../Navbar/Navbar';
+import Navbar from './Navbar/Navbar';
 import { removeUser } from '../../utils/localStorage';
 
 import './Header.css';
