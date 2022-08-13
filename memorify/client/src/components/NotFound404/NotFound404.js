@@ -8,7 +8,7 @@ const NotFound404 = () => {
             </h1>
             <h3 className="not__found--error">
                 Not Found
-            </h3>
+            </h3> 
             <h4 className="not__found--error--message">
                 The resource requested could not be found on this server  :(
             </h4>
