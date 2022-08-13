@@ -12,6 +12,7 @@ import Cards from './components/Cards/Cards';
 import CardDetails from './components/Cards/CardDetails/CardDetails';
 import EditCard from './components/Cards/EditCard/EditCard';
 import Auth from './components/Auth/Auth';
+import NotFound404 from './components/NotFound404/NotFound404';
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path='/memories/:id' element={<CardDetails />} />
                 <Route path='/memories/:id/edit' element={<EditCard />} />
                 <Route path='/auth' element={<Auth />} />
+                <Route path='*' element={<NotFound404 />} />
             </Routes>
         </AuthContextProvider>
     );
