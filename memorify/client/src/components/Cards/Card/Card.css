@@ -29,7 +29,7 @@
 .card__author {
     position: absolute;
     top: 10px;
-    z-index: 100;
+    z-index: 10;
 
     font-size: 1.4rem;
     font-weight: normal;
