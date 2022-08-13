@@ -73,6 +73,16 @@ const CardDetails = () => {
                 </article>
 
                 <section className="section__aside--actions">
+                    <i className={isOwner ? 'fa-solid fa-heart owner' : 'fa-solid fa-heart'} onClick={() => {
+                        if (!isOwner) {
+                            handleLike();
+                        }
+                    }}>
+                        &nbsp;
+                        <span className="card__likes--span">
+                            {likes.length}
+                        </span>
+                    </i>
                     {isOwner && (
                         <>
                             <Link to={`/memories/${id}/edit`}>
@@ -80,13 +90,6 @@ const CardDetails = () => {
                             </Link>
                             <i className="fa-solid fa-trash" onClick={() => deleteCard(id, navigate)}></i>
                         </>
-                    )}
-                    {!isOwner && (
-                        <i className="fa-solid fa-heart" onClick={handleLike}>
-                            <span>
-                                {likes.length}
-                            </span>
-                        </i>
                     )}
                 </section>
             </section>
