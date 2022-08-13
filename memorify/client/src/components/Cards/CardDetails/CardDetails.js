@@ -55,7 +55,8 @@ const CardDetails = () => {
                         <span className="section__card--span--tags">
                             {tags &&
                                 tags.map(tag =>
-                                    <span id={tag} key={tag}>#{tag}
+                                    <span id={tag} key={tag}>
+                                        #{tag}
                                         &nbsp;
                                     </span>
                                 )}
@@ -71,12 +72,11 @@ const CardDetails = () => {
                 </article>
 
                 <section className="section__aside--actions">
-                    <i className={isOwner ? 'fa-solid fa-heart owner' : 'fa-solid fa-heart'} onClick={() => {
+                    <i className={(isOwner || !user) ? 'fa-solid fa-heart gray' : 'fa-solid fa-heart'} onClick={() => {
                         if (!isOwner) {
                             handleLike();
                         }
                     }}>
-                        &nbsp;
                         <span className="card__likes--span">
                             {likes.length}
                         </span>
