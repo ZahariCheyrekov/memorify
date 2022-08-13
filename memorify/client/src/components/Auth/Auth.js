@@ -12,12 +12,14 @@ const Auth = () => {
     const [showPassword, setSowPassword] = useState(false);
     const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', password: '', repeatPassword: '' });
 
-    const handleSubmit = (ev) => {
+    const handleSubmit = async (ev) => {
         ev.preventDefault();
 
-        isSignIn ? auth(SIGNIN, formData) : auth(SIGNUP, formData);
+        isSignIn
+            ? await auth(SIGNIN, formData)
+            : await auth(SIGNUP, formData);
 
-        navigate('/');
+        navigate('/memories');
     }
 
     const handleChange = (ev) => {
