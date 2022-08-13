@@ -12,6 +12,7 @@
 
     margin: 50px auto 30px;
     padding: 20px 20px 70px;
+    word-wrap: break-word;
 
     background-color: #fff;
     border-radius: 10px;
@@ -106,5 +107,12 @@
     div.section__card--details {
         max-width: unset;
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .section__card--author {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
