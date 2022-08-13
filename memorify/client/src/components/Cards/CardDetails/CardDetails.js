@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import './CardDetails.css';
 
-import { getCard, getCards } from '../../../services/cards';
+import { getCard } from '../../../services/cards';
 import { deleteCard, likeCard } from '../../../api/requester';
 import { AuthContext } from '../../../contexts/AuthContext';
 import CommentSection from './CommentSection/CommentSection';
@@ -11,15 +11,13 @@ import CommentSection from './CommentSection/CommentSection';
 const CardDetails = () => {
     const navigate = useNavigate();
     const user = useContext(AuthContext);
+    const { id } = useParams();
     const [card, setCard] = useState({});
-    const [cards, setCards] = useState([]);
     const [tags, setTags] = useState([]);
     const [likes, setLikes] = useState([]);
-    const { id } = useParams();
     const isOwner = user?.result?._id === card.creatorId;
 
     useEffect(() => {
-        fetchCards();
         fetchCard();
     }, []);
 
@@ -31,10 +29,10 @@ const CardDetails = () => {
         setCard(card);
     }
 
-    const fetchCards = async () => {
-        const cards = await getCards();
-        const filtered = cards.filter(cd => cd._id !== id && cd.tags.includes(card.tags));
-        setCards(filtered);
+    const handleLike = async () => {
+        const data = await likeCard(id);
+        const allLikes = data.data.likes;
+        setLikes([...allLikes]);
     }
 
     return (
@@ -83,14 +81,14 @@ const CardDetails = () => {
                             <i className="fa-solid fa-trash" onClick={() => deleteCard(id, navigate)}></i>
                         </>
                     )}
-                    <p>
-                        Likes: {likes.length}
-                    </p>
                     {!isOwner && (
-                        <i className="fa-solid fa-heart" onClick={() => likeCard(id)}></i>
+                        <i className="fa-solid fa-heart" onClick={handleLike}>
+                            <span>
+                                {likes.length}
+                            </span>
+                        </i>
                     )}
                 </section>
-
             </section>
         </main >
     );
