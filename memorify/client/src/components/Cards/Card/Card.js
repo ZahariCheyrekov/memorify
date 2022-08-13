@@ -26,7 +26,7 @@ const Card = ({ id,
                     <h2 className="card__author">
                         {name}
                     </h2>
-                    <p className="card__content">
+                    <p className="card__tags">
                         {tags}
                     </p>
                     <p className="card__createdAt">
