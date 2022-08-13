@@ -26,3 +26,21 @@ export const createCard = async (card) => {
         console.log(error);
     }
 }
+
+export const likeCard = async (likid) => {
+    try {
+        const { data } = await api.likeCard(likid);
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const postComment = async (id, comment) => {
+    try {
+        const { data } = await api.postComment(id, comment);
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
