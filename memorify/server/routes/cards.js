@@ -11,6 +11,6 @@ router.get('/:id', getCard);
 router.patch('/:id', auth, updateCard); 
 router.delete('/:id', auth, deleteCard);
 router.patch('/:id/likeCard', auth, likeCard);
-router.post('/:id/comments', auth, postComment);
+router.patch('/:id/comments', auth, postComment);
 
 export default router;
