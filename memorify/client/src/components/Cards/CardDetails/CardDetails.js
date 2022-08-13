@@ -64,8 +64,6 @@ const CardDetails = () => {
                     <p className="section__card--description">
                         {card.description}
                     </p>
-
-                    <CommentSection />
                 </div>
 
                 <article className="section__article--img">
@@ -93,6 +91,8 @@ const CardDetails = () => {
                     )}
                 </section>
             </section>
+
+            <CommentSection />
         </main >
     );
 }
