@@ -1,3 +1,8 @@
+.main__card--details {
+    height: 100%;
+    margin-bottom: 100px;
+}
+
 .main__section {
     max-width: 1200px;
     display: flex;
