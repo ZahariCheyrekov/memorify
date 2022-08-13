@@ -19,6 +19,10 @@ app.use(cors());
 app.use('/memories', cardsRoutes);
 app.use('/user', userRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Application is running correctly.');
+});
+
 const PORT = process.env.PORT || DEFAULT_PORT;
 
 configDatabase(app, PORT);
