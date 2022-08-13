@@ -78,3 +78,7 @@
 .fa-solid.fa-heart {
     color: rgb(156, 20, 20);
 }
+
+.fa-solid.fa-heart.owner {
+    color: rgb(115, 115, 115);
+}
