@@ -5,6 +5,7 @@
 
     margin: 100px auto;
     max-width: 400px;
+    width: 80%;
     min-height: 380px;
     padding: 40px 16px;
 
@@ -14,7 +15,7 @@
 
 .fa-solid.fa-lock {
     margin: 0 auto;
-    max-width: 12%;
+    width: 40px;
 
     background-color: rgb(18, 39, 69);
     color: #fff;
@@ -92,4 +93,19 @@
 
 .form__auth--action--button:hover {
     background-color: rgb(240, 240, 240);
+}
+
+@media only screen and (max-width: 560px) {
+    input {
+        border: 1px solid rgba(0, 0, 0, 0.66);
+        border-radius: 2px;
+    }
+
+    .form__button--signin {
+        margin-bottom: 20px;
+    }
+
+    .form__auth--action--button {
+        font-size: 0.8rem;
+    }
 }
