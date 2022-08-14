@@ -79,7 +79,7 @@ Memorify is a Full Stack web application wich was created with the MERN stack. T
   
 # <p id="applicationpictures">Application Pictures</p>
 
-## Laptop
+## Computer
 
 ### Home 
 ![memorify-laptop-home](https://user-images.githubusercontent.com/95768526/184531707-0642d186-e0dc-42da-956a-c4487fd4596e.png)
@@ -102,7 +102,7 @@ Memorify is a Full Stack web application wich was created with the MERN stack. T
 ### Memory Comments
 ![memorify-laptop-memory-details-comments](https://user-images.githubusercontent.com/95768526/184531731-45bcc573-21cd-47f9-8f94-727028d96950.png)
 
-## Phone
+## Mobile
 
 ### Home
 ![memorify-phone-home](https://user-images.githubusercontent.com/95768526/184531932-1632923b-fc2a-4452-9274-a72466be35d3.png)
@@ -127,5 +127,3 @@ Memorify is a Full Stack web application wich was created with the MERN stack. T
 
 ### Navigation
 ![memorify-phone-navigation](https://user-images.githubusercontent.com/95768526/184532015-1fe719b7-d400-4b4e-866a-85304464ff25.png)
-
-
