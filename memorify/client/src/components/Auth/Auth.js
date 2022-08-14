@@ -23,7 +23,7 @@ const Auth = () => {
     }
 
     const handleChange = (ev) => {
-        setFormData({ ...formData, [ev.target.name]: ev.target.value })
+        setFormData({ ...formData, [ev.target.name]: ev.target.value.trim() })
     }
 
     const switchMode = () => {
