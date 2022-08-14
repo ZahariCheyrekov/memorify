@@ -67,6 +67,7 @@ Memorify is a Full Stack web application wich was created with the MERN stack. T
   - <a href="https://www.npmjs.com/package/react-loading">React Loading</a>
   - <a href="https://www.npmjs.com/package/react-player">React Player</a>
   - <a href="https://firebase.google.com/">Firebase</a>
+  - <a href="https://www.heroku.com/">Heroku</a>
   - <a href="https://nodejs.org/en/">Node</a>
   - <a href="https://expressjs.com/">Express</a>
   - <a href="https://www.npmjs.com/package/nodemon">nodemon</a>
