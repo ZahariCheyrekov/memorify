@@ -99,6 +99,29 @@ Memorify is a Full Stack web application wich was created with the MERN stack. T
 ### Memory Comments
 ![memorify-laptop-memory-details-comments](https://user-images.githubusercontent.com/95768526/184531731-45bcc573-21cd-47f9-8f94-727028d96950.png)
 
+## Phone
+
+### Home
+![memorify-phone-home](https://user-images.githubusercontent.com/95768526/184531932-1632923b-fc2a-4452-9274-a72466be35d3.png)
+
+### Sign In
+![memorify-phone-signin](https://user-images.githubusercontent.com/95768526/184531937-49c6265b-0289-4b5b-87bd-a57f1458207a.png)
+
+### Sign Up
+![memorify-phone-signup](https://user-images.githubusercontent.com/95768526/184531940-138d630d-01a2-4c46-9674-418205928971.png)
+
+### Create
+![memorify-phone-create](https://user-images.githubusercontent.com/95768526/184531946-4a2daa74-d411-424a-be9d-58d5d8044390.png)
+
+### Memories
+![memorify-phone-memories](https://user-images.githubusercontent.com/95768526/184531952-0f8edc2d-b5b8-423a-813a-0a8c022a0af1.png)
+
+### Memory Details
+![memorify-phone-memory-details](https://user-images.githubusercontent.com/95768526/184531968-5cde6db1-1afe-4fbe-b073-8e320ac8180b.png)
+
+### Memory Comments
+![memorify-phone-memory-comments](https://user-images.githubusercontent.com/95768526/184531975-1ffa0817-9be3-45d6-a7ea-636df035a1f2.png)
+
 
 
 
