@@ -75,3 +75,5 @@ Memorify is a Full Stack web application wich was created with the MERN stack. T
   - <a href="https://jwt.io/">jwt</a>
   - <a href="https://www.npmjs.com/package/bcrypt">bcrypt</a>
   - <a href="https://www.npmjs.com/package/dotenv">dotenv</a>
+  
+# <p id="applicationpictures">Application Pictures</p>
