@@ -7,6 +7,7 @@ You can visit the project from here: https://memorify-mern.web.app/
   - <a href="#howtorun">How to run the app on your computer</a>
   - <a href="#memories">Memories</a>
   - <a href="#functionality">Functionality</a>
+  - <a href="#tools">Tools</a>
 
 # <p id="about">About this project</p>
 
@@ -59,3 +60,18 @@ Memorify is a Full Stack web application wich was created with the MERN stack. T
 - <strong>Delete</strong>
     - creator of the memories can delete them
 
+# <p id="tools">Tools</p>
+
+ - <a href="https://reactjs.org/">React</a>
+  - <a href="https://reactrouter.com/">React Router</a>
+  - <a href="https://www.npmjs.com/package/react-loading">React Loading</a>
+  - <a href="https://www.npmjs.com/package/react-player">React Player</a>
+  - <a href="https://firebase.google.com/">Firebase</a>
+  - <a href="https://nodejs.org/en/">Node</a>
+  - <a href="https://expressjs.com/">Express</a>
+  - <a href="https://www.npmjs.com/package/nodemon">nodemon</a>
+  - <a href="https://www.mongodb.com/">MongoDB</a>
+  - <a href="https://mongoosejs.com/">Mongoose</a>
+  - <a href="https://jwt.io/">jwt</a>
+  - <a href="https://www.npmjs.com/package/bcrypt">bcrypt</a>
+  - <a href="https://www.npmjs.com/package/dotenv">dotenv</a>
