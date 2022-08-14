@@ -8,7 +8,7 @@ You can visit the project from here: https://memorify-mern.web.app/
 
 # <p id="about">About this project</p>
 
-# <p id="howto">How to run the app on your computer</p>
+# <p id="howtorun">How to run the app on your computer</p>
 
 1. You can download the project ZIP file or you can clone the repository directly.
 2. Open the project with IDE/Code Editor.
