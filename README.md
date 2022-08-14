@@ -8,6 +8,7 @@ You can visit the project from here: https://memorify-mern.web.app/
   - <a href="#memories">Memories</a>
   - <a href="#functionality">Functionality</a>
   - <a href="#tools">Tools</a>
+  - <a href="#applicationpictures">Application Pictures</a>
 
 # <p id="about">About this project</p>
 
