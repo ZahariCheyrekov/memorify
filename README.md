@@ -8,6 +8,8 @@ You can visit the project from here: https://memorify-mern.web.app/
 
 # <p id="about">About this project</p>
 
+Memorify is a Full Stack web application wich was created with the MERN stack. The idea of the project is a simple place where people can share their memories with others and give opinion about certain places they visited.
+
 # <p id="howtorun">How to run the app on your computer</p>
 
 1. You can download the project ZIP file or you can clone the repository directly.
