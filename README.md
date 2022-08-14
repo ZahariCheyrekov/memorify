@@ -78,3 +78,28 @@ Memorify is a Full Stack web application wich was created with the MERN stack. T
   - <a href="https://www.npmjs.com/package/dotenv">dotenv</a>
   
 # <p id="applicationpictures">Application Pictures</p>
+
+## Laptop
+
+### Home 
+![memorify-laptop-home](https://user-images.githubusercontent.com/95768526/184531707-0642d186-e0dc-42da-956a-c4487fd4596e.png)
+
+### Sign In
+![memorify-laptop-signin](https://user-images.githubusercontent.com/95768526/184531741-9dc483f4-bbac-46c6-bd24-f15656338dbb.png)
+
+###Sign Up
+![memorify-laptop-signup](https://user-images.githubusercontent.com/95768526/184531746-456bc37a-aa42-47c2-9db9-069501c6bdff.png)
+
+### Memories
+![memorify-laptop-memories](https://user-images.githubusercontent.com/95768526/184531715-b1f23518-ea65-4c07-b293-2e029b8b5587.png)
+
+### Memory Details
+![memorify-laptop-memory-details](https://user-images.githubusercontent.com/95768526/184531722-b5feca92-4cf3-4eec-afd7-2f3d176dd550.png)
+
+### Memory Comments
+![memorify-laptop-memory-details-comments](https://user-images.githubusercontent.com/95768526/184531731-45bcc573-21cd-47f9-8f94-727028d96950.png)
+
+
+
+
+
