@@ -12,12 +12,11 @@ import { DEFAULT_PORT } from './constants/index.js';
 const app = express();
 dotenv.config();
 
-app.use(express.json());
-app.use(bodyParser.json());
+app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors());
 
-app.use('/memories', cardsRoutes);
+app.use('/memories', cardsRoutes); 
 app.use('/user', userRoutes);
 
 app.get('/', (req, res) => {
