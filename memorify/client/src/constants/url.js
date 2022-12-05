@@ -1,3 +1,3 @@
-export const baseUrl = 'https://memorify-mern.herokuapp.com';
+export const baseUrl = 'https://ruby-gorgeous-spider.cyclic.app/';
 
 export const cardsUrl = `${baseUrl}/memories`;
